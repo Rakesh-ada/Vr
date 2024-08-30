@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VR Garden</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    
+    <!-- Sky -->
+    <a-sky color="#87CEEB"></a-sky>
+
+    <!-- Ground -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7CFC00"></a-plane>
+
+    <!-- Tree -->
+    <a-entity position="0 0 -5">
+      <a-cylinder position="0 1 0" radius="0.5" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="0 3 0" radius="1.5" color="#228B22"></a-sphere>
+    </a-entity>
+
+    <!-- Flower -->
+    <a-entity position="3 0 -3">
+      <a-cylinder position="0 0.5 0" radius="0.1" height="1" color="#8B4513"></a-cylinder>
+      <a-sphere position="0 1.2 0" radius="0.5" color="#FF69B4"></a-sphere>
+    </a-entity>
+
+    <!-- Bush -->
+    <a-sphere position="-3 0.5 -3" radius="1" color="#006400"></a-sphere>
+
+    <!-- Navigation -->
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+
+    <!-- Teleportation controls -->
+    <a-entity id="rig" movement-controls position="0 1.6 0">
+      <a-camera></a-camera>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
+    </a-entity>
+    
+  </a-scene>
+</body>
+</html>
